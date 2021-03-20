@@ -8,7 +8,7 @@ const Transfort = (props) => {
   const {name, image } = props.transfort;
   const history = useHistory();
   const handleBookingTicket = () => {
-    history.push("/booking");
+    history.push("/destination");
   };
   return (
     <div>

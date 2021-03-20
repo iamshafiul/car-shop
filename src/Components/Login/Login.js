@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, handleSignIn, handleSignOut, initialize
 import { Button, Form, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle} from '@fortawesome/free-brands-svg-icons'
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import "../Login/Login.css";
 
 function Login() {
@@ -99,7 +99,7 @@ function Login() {
 
         <Form.Group controlId="formGridAddress1">
           <Form.Label>Address</Form.Label>
-          <Form.Control placeholder="1234 Main St" required />
+          <Form.Control placeholder="1234 Main St" />
         </Form.Group>
 
         <Form.Row>
@@ -135,7 +135,17 @@ function Login() {
       </Form>
       <h2 className="text-center line">or</h2>
       <div className="google-login-button text-center">
-        {user.isSigned ? <button onClick={signOut}> <FontAwesomeIcon icon={faGoogle} /> sign out</button> : <button onClick={googleSignIn}> <FontAwesomeIcon icon={faGoogle} /> sign in</button>}
+        {user.isSigned ? (
+          <button onClick={signOut}>
+            {" "}
+            <FontAwesomeIcon icon={faGoogle} /> sign out
+          </button>
+        ) : (
+          <button onClick={googleSignIn}>
+            {" "}
+            <FontAwesomeIcon icon={faGoogle} /> sign in
+          </button>
+        )}
       </div>
       <p style={{ color: "red" }}>{user.error}</p>
       {user.success && <p style={{ color: "green" }}>User {newUser ? "Created" : "loged In"} Successfully</p>}
