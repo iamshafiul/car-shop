@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import "../Team/Team.css";
-import { Link, useHistory } from "react-router-dom";
-const Team = (props) => {
-  const { id, name, image } = props.transfort;
+import "../Transfort/Transfort.css";
+import {useHistory } from "react-router-dom";
+const Transfort = (props) => {
+  const {name, image } = props.transfort;
   const history = useHistory();
   const handleBookingTicket = () => {
     history.push("/booking");
@@ -19,16 +19,10 @@ const Team = (props) => {
           <Button onClick={handleBookingTicket} variant="primary">
             book now <FontAwesomeIcon icon={faArrowRight} />
           </Button>
-
-          {/* <Link to={`/${id}`}>
-            <Button onClick={handleBookingTicket} variant="primary">
-              book now <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
-          </Link> */}
         </Card.Body>
       </Card>
     </div>
   );
 };
 
-export default Team;
+export default Transfort;

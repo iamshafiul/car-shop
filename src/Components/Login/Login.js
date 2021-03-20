@@ -5,11 +5,12 @@ import { createUserWithEmailAndPassword, handleSignIn, handleSignOut, initialize
 import { Button, Form, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle , faFacebook} from '@fortawesome/free-brands-svg-icons'
-
-
-
+import { faGoogle} from '@fortawesome/free-brands-svg-icons'
 import "../Login/Login.css";
+
+
+
+
 function Login() {
   const [newUser, setNewuser] = useState(false);
   const [user, setUser] = useState({
@@ -26,7 +27,7 @@ function Login() {
 
   const history = useHistory();
   const location = useLocation();
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [ setLoggedInUser] = useContext(UserContext);
   const { from } = location.state || { from: { pathname: "/" } };
 
   const googleSignIn = () => {

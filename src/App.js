@@ -4,10 +4,11 @@ import Home from "./Components/Home/Home";
 import NoMatch from "./Components/NoMatch/NoMatch";
 import Header from "./Components/Header/Header";
 import Login from "./Components/Login/Login";
-import Team from "./Components/Team/Team";
+import Transfort from "./Components/Transfort/Transfort";
 import Book from "./Components/Book/Book";
 import { createContext, useState } from "react";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+
 
 export const UserContext = createContext();
 
@@ -30,8 +31,8 @@ function App() {
           <PrivateRoute path="/booking">
             <Book></Book>
           </PrivateRoute>
-          <Route path="/team">
-            <Team></Team>
+          <Route path="/transfort">
+            <Transfort></Transfort>
           </Route>
           <Route path="*">
             <NoMatch></NoMatch>
