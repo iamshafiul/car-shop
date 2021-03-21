@@ -1,7 +1,7 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../Book/Book.css";
-import map from "../../images/Map.png";
+import GoogleMap from "../GoogleMap/GoogleMap";
 
 const Book = () => {
   return (
@@ -18,19 +18,15 @@ const Book = () => {
               <Form.Label>Pick to</Form.Label>
               <Form.Control type="text" placeholder="Dhanmondi" />
             </Form.Group>
-
-            <Link to="/bookInfo" className="text-white text-decoration-none">
-              <Button className="btn-block" variant="primary" type="submit">
-                Submit
-              </Button>
-            </Link>
+            <Button className="btn-block" variant="primary" type="button" onClick="heandleSearch">
+              Search
+            </Button>
           </Form>
         </Col>
         <Col md={6} sm={12} xs={12}>
-          <img src={map} alt="" />
+          <GoogleMap></GoogleMap>
         </Col>
       </Row>
-      ;
     </Container>
   );
 };

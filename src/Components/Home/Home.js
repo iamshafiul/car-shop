@@ -6,9 +6,11 @@ import uberData from '../../data/data.json';
 
 const Home = () => {
   const [transfort, setTransfort] = useState([]);
+
   useEffect(() => {
    setTransfort(uberData);
   }, []);
+  
   return (
     <div className="home-bg">
         <Container>
