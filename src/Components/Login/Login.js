@@ -80,7 +80,7 @@ function Login() {
 
   return (
     <div className="form-bg">
-      <Form className="bg-dark text-white p-5 w-50 m-auto border border-white shadow rounded" onSubmit={handleSubmit}>
+      <Form className="bg-dark text-white p-5 max-w-50 m-auto border border-white shadow rounded" onSubmit={handleSubmit}>
         <Form.Group controlId="formGridName">
           {newUser && <Form.Label>name</Form.Label>}
           {newUser && <Form.Control type="text" name="name" onBlur={handleBlur} placeholder="Enter Your Name" required />}
