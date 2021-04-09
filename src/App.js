@@ -4,10 +4,12 @@ import Home from "./Components/Home/Home";
 import NoMatch from "./Components/NoMatch/NoMatch";
 import Header from "./Components/Header/Header";
 import Login from "./Components/Login/Login";
-import Transfort from "./Components/Transfort/Transfort";
-import Book from "./Components/Book/Book";
+import Shop from "./Components/Shop/Shop";
+import Order from "./Components/Order/Order";
+import Admin from "./Components/Admin/Admin";
 import { createContext, useState } from "react";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import CheckOut from "./Components/CheckOut/CheckOut";
 
 
 
@@ -26,14 +28,20 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute path="/admin">
+            <Admin></Admin>
+          </PrivateRoute>
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/destination">
-            <Book></Book>
+          <PrivateRoute  path="/product/:productKey">
+            <CheckOut></CheckOut>
           </PrivateRoute>
-          <Route path="/transfort">
-            <Transfort></Transfort>
+          <PrivateRoute path="/order">
+            <Order></Order>
+          </PrivateRoute>
+          <Route path="/shop">
+            <Shop></Shop>
           </Route>
           <Route path="*">
             <NoMatch></NoMatch>
